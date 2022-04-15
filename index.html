@@ -12,11 +12,12 @@
 <body>
     <header>
         <nav>
-            <h1><a href="#">Yuko Bolak</a></h1>
+            <h1 class="top-title"><a href="#">Yuko Bolak</a></h1>
             <ul class="top-nav">
-            <li><a href="#">home</a></li>
-            <li><a href="#portfolio">portfolio</a></li>
-            <li><a href="#contact">contact</a></li>
+            <li><a class="link-text" href="#">home</a></li>
+            <li><a class="link-text" href="#portfolio">portfolio</a></li>
+            <li><a class="link-text" href="#skills">skills</a></li>
+            <li><a class="link-text" href="#contact">contact</a></li>
             </ul>
         </nav>
 
@@ -27,55 +28,81 @@
     </header>
 
     <main>
-        <div class="main-title">
-            <h3>Portfolio</h3>
+        <div class="main-container">
+            <div class="main-title" id="portfolio">
+                <h3>Portfolio</h3>
+            </div>
+            <div class="container">
+                <div class="col box-1">
+                    <img src="images/portfolio-1.png" alt="image of marketing page">
+                    <h3>Marketing Page</h3>
+                    <p>This project shows the front page of a marketing website meant for a specific business I'm interested in.</p>
+                </div>
+                <div class="col box-2">
+                    <img src="images/portfolio-2.png" alt="image of search page">
+                    <h3>Search Page</h3>
+                    <p>This project searches through a specific database to find information that the user is trying to look up.</p>
+                </div>
+                <div class="col box-3">
+                    <img src="images/portfolio-3.png" alt="image of travel app">
+                    <h3>Travel App</h3>
+                    <p>This project compares travel times based on different transportation methods and tells you the best one.</p>
+                </div>
+                <div class="col box-4">
+                    <img src="images/portfolio-4.png" alt="image of map of favorite spots">
+                    <h3>Map of Favorite Spots</h3>
+                    <p>This project uses mapping apis to plot points for my favorite spots in the city for a do-it-yourself walking tour.</p>
+                </div>
+                <div class="col box-5">
+                    <img src="images/portfolio-5.png" alt="image of photo gallery">
+                    <h3>Photo Gallery</h3>
+                    <p>This project shows pictures from a recent trip to the viewer and allows them to easily navigate through photos.</p>
+                </div>
+                <div class="col box-6">
+                    <img src="images/portfolio-6.png" alt="image of calculator">
+                    <h3>Calculator</h3>
+                    <p>Someone can enter in the numbers they want, and press the big blue button and get the result.</p>
+                </div>
+                
+            </div>
+
+            <div class="main-title" id="skills">
+                <h3>Skills</h3>
+            </div>
+            <div class="container skills-section">
+                <div class="skills-copy-left">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu. Vestibulum mattis ullamcorper velit sed ullamcorper morbi.</p>
+                </div>
+
+                <div class="skills-copy-right">
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <div class="container">
-            <div class="col box-1">
-                <img src="images/portfolio-1.png" alt="image of marketing page">
-                <h3>Marketing Page</h3>
-                <p>This project shows the front page of a marketing website meant for a specific business I'm interested in.</p>
-            </div>
-            <div class="col box-2">
-                <img src="images/portfolio-2.png" alt="image of search page">
-                <h3>Search Page</h3>
-                <p>This project searches through a specific database to find information that the user is trying to look up.</p>
-            </div>
-            <div class="col box-3">
-                <img src="images/portfolio-3.png" alt="image of travel app">
-                <h3>Travel App</h3>
-                <p>This project compares travel times based on different transportation methods and tells you the best one.</p>
-            </div>
-            <div class="col box-4">
-                <img src="images/portfolio-4.png" alt="image of map of favorite spots">
-                <h3>Map of Favorite Spots</h3>
-                <p>This project uses mapping apis to plot points for my favorite spots in the city for a do-it-yourself walking tour.</p>
-            </div>
-            <div class="col box-5">
-                <img src="images/portfolio-5.png" alt="image of photo gallery">
-                <h3>Photo Gallery</h3>
-                <p>This project shows pictures from a recent trip to the viewer and allows them to easily navigate through photos.</p>
-            </div>
-            <div class="col box-6">
-                <img src="images/portfolio-6.png" alt="image of calculator">
-                <h3>Calculator</h3>
-                <p>Someone can enter in the numbers they want, and press the big blue button and get the result.</p>
-            </div>
+        <div id="contact">
+            <h3>Contact</h3>
+            <p class="contact-main">If you're interested in chatting or  want more information about what i've been working on, I'd love to hear from you!</p>
+            <p>Phone<span class="contact-space">+1(111)555-1234</span></p>
+            <p>Email<span class="contact-space">email@yoursite.com</span></p>
+            <hr>
         </div>
     </main>
 
     <footer>
-        <h2>Yuko Bolak</h2>
+        <h3>Yuko Bolak</h3>
         <ul class="footer-nav">
             <li class="top"><a href="#top">back to top</a></li>
             <li class="full"><a href="#top">home</a></li>
             <li class="full"><a href="#portfolio">portfolio</a></li>
+            <li class="full"><a href="#skills">skills</a></li>
             <li class="full"><a href="#contact">contact</a></li>
         </ul>
     </footer>
     
-
-
 </body>
 </html>

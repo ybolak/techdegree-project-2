@@ -8,10 +8,13 @@
     padding: 0;
 }
 
+
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    text-align: center;
     font-family: 'Roboto', sans-serif;
     color: #4D4D4D;
     background-color: white;
@@ -26,6 +29,7 @@ ul {
 }
 
 a {
+    font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
     color: #4D4D4D;
@@ -33,6 +37,8 @@ a {
 
 p {
     font-weight: 300;
+    line-height: 1.5;
+    color: gray;
 }
 
 img {
@@ -53,27 +59,58 @@ footer {
   Base Layout Styles
 ==================================== */
 
-/* ---- Navigation ---- */
+/* link hover animations credit to Eina O ( https://codepen.io/thelittleblacksmith/pen/zXNVvY )  */
 
-header {
+
+.hover-container {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+
+
+.link-text:hover {
+    color: #61a3ff;
+    transition: .3s;
+} 
+  
+.link-text {
+    border-bottom: 3px solid #ff8cbc;
+    transition: all 0.25s linear;
+    position: relative;
+}
+  
+.link-text:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #61a3ff;
+    position: absolute;
+    left: 0;
+    bottom: -3px; 
+    transform-origin: left; 
+    transform: scale(0);
+    transition: 0.25s linear;
+}
+  
+  .link-text:hover:before {
+    transform: scale(1);
+  }
+
+
+header,
+#contact {
     background-color: #f7f7f7;
 }
 
 nav {
     font-family: "Roboto", Arial, Verdana;
-    font-weight: 400;
     letter-spacing: .05em;
     padding: 25px;
 }
 
-h1, .top-nav a {
-    font-weight: bold;
-}
-
-h1,
-.top-nav,
-.profile {
-    text-align: center;
+h1 a{
+    text-transform: none;    
 }
 
 .top-nav, .top-nav li {
@@ -85,12 +122,13 @@ h1,
 }
 
 .top-nav li {
-    padding: 10px 0;
+    padding: 3px 0;
     margin: 5px auto;
     background-color: #fff;
 }
 
-.top-nav a {
+.top-nav a,
+.main-title {
     text-transform: uppercase;
 }
 
@@ -104,50 +142,62 @@ h1,
 }
 
 .main-title {
-    margin: 3rem auto;
-    text-align: center;
-    text-transform: uppercase;
+    padding: 4rem 3rem 2rem;
 }
-
-/* ---- Layout Containers ---- */
 
 .container {
     max-width: 1100px;
     padding: 10px;
-    font-family: 'Roboto', sans-serif;
 }
 
 .col {
     margin: 10px;
     min-height: 250px;
-    text-align: center;
-    letter-spacing: 1px;
     padding-top: 5px;
 }
 
-/* .box-1 {
-    background-color: #1BC5DA;
+.col h3 {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    font-weight: 400;
 }
 
-.box-2 {
-    background-color: #DAAF1B;
+.col p {
+    padding: 0 0.5rem 1.5rem;
 }
 
-.box-3 {
-    background-color: #2177AB;
+.skills-copy-right {
+    padding: 20px 25px;
+    min-height: 250px;
+    background-color: red;
 }
 
-.box-4 {
-    background-color: #2ACBB9;
+.skills-copy-left {
+    padding: 20px 25px;
+    min-height: 250px;
+    background-color: blue;
 }
 
-.box-5 {
-    background-color: #67558B;
+.contact-space {
+    margin-left: 1rem;
+    font-weight: 500;
+}
+#contact h3{
+    padding: 4rem 3rem 2rem;
+    text-transform: uppercase;
 }
 
-.box-6 {
-    background-color: #5F6F77;
-} */
+#contact p {
+    padding: 1rem;
+}
+
+#contact hr {
+    border: none;
+    margin: 3rem auto 0;
+    width: 90%;
+    height: 2px;
+    background-color: rgba(128, 128, 128, .25);
+}
 
 .full {
     display: none;
@@ -159,6 +209,11 @@ h1,
 ==================================== */
 
 @media (min-width: 768px) {
+    
+    .top-title {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
     .top-nav {
         margin-top: 0;
     }
@@ -174,6 +229,23 @@ h1,
         margin-right: 0;
     }
 
+    .profile {
+        display: flex;
+    }
+
+    .profile-img {
+        order: 1;
+        width: 40%;
+        margin-right: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .profile-p {
+        margin-left: 2rem;
+        font-size: 1.25em;
+        text-align: left;
+    }
+
     .container {
         display: flex;
         flex-wrap: wrap;
@@ -181,6 +253,20 @@ h1,
 
     .col {
         flex-basis: calc(50% - 20px);
+    }
+
+    .col p {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem
+    }
+
+    .contact-main {
+        margin: 0 auto 1rem;
+        width: 70%;
+    }
+
+    #contact p {
+        font-size: 1.25em
     }
 
     .top {
@@ -194,10 +280,21 @@ h1,
 }
 
 @media (min-width: 1024px) {
+
+    /* body {
+        max-width: 100vw;
+    } */
+
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 25px;
+        margin: 10px 40px;
+    }
+
+    footer {
+        padding: 0 50px;
     }
 
     .top-nav,
@@ -206,7 +303,32 @@ h1,
         margin-bottom: 0;
     }
 
+    .profile-img {
+        padding: 0 30px;
+    }
+
+    /* .profile-p {
+        padding: 0 30px;
+    } */
+
+    .main-container {
+        padding: 0 2rem;
+        background-color: #f7f7f7;
+    }
+
+    .main-title,
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: white;
+    }
+
     .col {
         flex-basis: calc(33.333% - 20px);
     }
+
+    .contact-main {
+        width: 60%;
+    }
+
 }
